@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Pengguna - Perpustakaan</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../typescript/output.css" rel="stylesheet">
+    <script type="module" src="../typescript/index.js"></script>
+
+
+    <style>
+        /* Custom font jika diperlukan */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 min-h-screen p-4 md:p-8 pb-32">
+
+    <main class="max-w-6xl mx-auto">
+
+        <div class="flex justify-end mb-10">
+            <a href="/"
+                class="group flex items-center gap-3 bg-white/80 backdrop-blur-md border border-slate-200 px-6 py-2.5 rounded-xl text-slate-600 font-bold shadow-sm hover:shadow-md hover:border-cyan-200 hover:text-cyan-600 transition-all duration-300 active:scale-95">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                    class="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300">
+                    <path fill-rule="evenodd"
+                        d="M17 10a.75.75 0 0 1-.75.75H5.612l4.158 3.96a.75.75 0 1 1-1.04 1.08l-5.5-5.25a.75.75 0 0 1 0-1.08l5.5-5.25a.75.75 0 1 1 1.04 1.08L5.612 9.25H16.25A.75.75 0 0 1 17 10Z"
+                        clip-rule="evenodd" />
+                </svg>
+
+                <span class="text-sm tracking-tight">Return</span>
+            </a>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-10 items-start">
+
+            <div class="w-full md:w-60 shrink-0 flex flex-col gap-8">
+                <div class="w-full md:w-60 shrink-0 animate-float">
+                    <div
+                        class="group relative w-full aspect-[3/4] rounded-[2.5rem] p-1.5 bg-gradient-to-r from-cyan-400 via-white to-indigo-400 shadow-2xl animate-gradient-x overflow-hidden">
+
+                        <div class="absolute inset-0 z-10 pointer-events-none">
+                            <div
+                                class="w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full animate-shimmer">
+                            </div>
+                        </div>
+
+                        <div class="w-full h-full rounded-[2rem] overflow-hidden bg-white p-1 relative z-0">
+                            <img src="https://img.perlego.com/book-covers/1506194/9781351809337.jpg" alt="Book Cover"
+                                class="w-full h-full object-cover rounded-[1.8rem] transition-transform duration-700 group-hover:scale-110">
+                        </div>
+
+                        <div
+                            class="absolute inset-0 bg-cyan-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10">
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="flex flex-col gap-2">
+                    <a href="/bookmarks"
+                        class="flex items-center gap-3 w-full p-3 rounded-xl bg-white text-slate-700 font-bold shadow-sm border border-slate-100 hover:bg-cyan-50 hover:text-cyan-700 hover:translate-x-1 transition-all duration-300 group">
+                        <div class="p-1.5 bg-cyan-100 text-cyan-600 rounded-lg group-hover:bg-cyan-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path d="M10 2a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-1.5 0V2.75A.75.75 0 0 1 10 2Z" />
+                                <path d="M10 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" />
+                            </svg>
+                        </div>
+                        <span class="text-xs">Bookmark</span>
+                    </a>
+
+                    <a href="/pinjam"
+                        class="flex items-center gap-3 w-full p-3 rounded-xl bg-white text-slate-700 font-bold shadow-sm border border-slate-100 hover:bg-cyan-50 hover:text-cyan-700 hover:translate-x-1 transition-all duration-300 group">
+                        <div class="p-1.5 bg-cyan-100 text-cyan-600 rounded-lg group-hover:bg-cyan-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path
+                                    d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
+                            </svg>
+                        </div>
+                        <span class="text-xs">Ajukan Peminjaman</span>
+                    </a>
+
+                    <div class="h-px bg-slate-200 my-1 mx-3"></div>
+
+                    <a href="/kategori"
+                        class="flex items-center gap-3 w-full p-3 rounded-xl bg-white text-slate-700 font-bold shadow-sm border border-slate-100 hover:bg-cyan-50 hover:text-cyan-700 hover:translate-x-1 transition-all duration-300 group">
+                        <div class="p-1.5 bg-cyan-100 text-cyan-600 rounded-lg group-hover:bg-cyan-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fill-rule="evenodd"
+                                    d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75Zm0 10.5a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <span class="text-xs">Jenis Buku</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="flex-1">
+                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-lg border border-slate-200 h-full">
+                    <h2 class="text-2xl font-black text-slate-900 mb-1 leading-tight">
+                        Detail Buku
+                    </h2>
+                    <p class="text-sm font-bold text-cyan-600 mb-6 uppercase tracking-wider">Informasi Katalog</p>
+
+                    <ul class="grid grid-cols-1 gap-2">
+                        <li
+                            class="flex items-center justify-between bg-slate-50 p-3 px-4 rounded-xl border border-slate-100">
+                            <span class="text-sm font-semibold text-slate-600">ID Buku</span>
+                            <span
+                                class="text-xs font-bold bg-white px-2 py-0.5 rounded border border-slate-200">#BK-2025-01</span>
+                        </li>
+
+                        <ul class="grid grid-cols-1 gap-2">
+                            <li
+                                class="flex items-center justify-between p-3 px-4 rounded-xl border border-transparent hover:border-cyan-100 hover:bg-cyan-50/30 transition-all duration-300 group">
+                                <div class="flex items-center gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        class="w-4 h-4 text-slate-400 group-hover:text-cyan-500">
+                                        <path fill-rule="evenodd"
+                                            d="M4.5 2A1.5 1.5 0 0 0 3 3.5v13A1.5 1.5 0 0 0 4.5 18h11a1.5 1.5 0 0 0 1.5-1.5V7.621a1.5 1.5 0 0 0-.44-1.06l-4.12-4.122A1.5 1.5 0 0 0 11.38 2H4.5Zm10 14.5h-10v-13h5.879L14.5 7.621V16.5Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <span class="text-xs font-medium text-slate-500">Judul</span>
+                                </div>
+                                <span class="text-sm font-bold text-slate-800 tracking-tight">The Art of Coding</span>
+                            </li>
+
+                            <li
+                                class="flex items-center justify-between p-3 px-4 rounded-xl border border-transparent hover:border-cyan-100 hover:bg-cyan-50/30 transition-all duration-300 group">
+                                <div class="flex items-center gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        class="w-4 h-4 text-slate-400 group-hover:text-cyan-500">
+                                        <path
+                                            d="M10 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM3.465 14.493a1.23 1.23 0 0 0 .41 1.412A9.957 9.957 0 0 0 10 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 0 0-13.074.003Z" />
+                                    </svg>
+                                    <span class="text-xs font-medium text-slate-500">Penulis</span>
+                                </div>
+                                <span class="text-sm font-semibold text-slate-700">Alex Riverside</span>
+                            </li>
+
+                            <li
+                                class="flex items-center justify-between p-3 px-4 rounded-xl border border-transparent hover:border-cyan-100 hover:bg-cyan-50/30 transition-all duration-300 group">
+                                <div class="flex items-center gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        class="w-4 h-4 text-slate-400 group-hover:text-cyan-500">
+                                        <path
+                                            d="M4.5 3.75a.75.75 0 0 0-1.5 0v12.5a.75.75 0 0 0 1.5 0V3.75ZM17 3.75a.75.75 0 0 0-1.5 0v12.5a.75.75 0 0 0 1.5 0V3.75ZM6.5 10a.75.75 0 0 1 .75-.75h6a.75.75 0 0 1 0 1.5h-6A.75.75 0 0 1 6.5 10Z" />
+                                    </svg>
+                                    <span class="text-xs font-medium text-slate-500">Dimensi</span>
+                                </div>
+                                <span class="text-sm text-slate-700">15 x 23 cm</span>
+                            </li>
+
+                            <li
+                                class="flex items-center justify-between p-3 px-4 rounded-xl border border-transparent hover:border-cyan-100 hover:bg-cyan-50/30 transition-all duration-300 group">
+                                <div class="flex items-center gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        class="w-4 h-4 text-slate-400 group-hover:text-cyan-500">
+                                        <path fill-rule="evenodd"
+                                            d="M4.5 2A1.5 1.5 0 0 0 3 3.5v13A1.5 1.5 0 0 0 4.5 18h11a1.5 1.5 0 0 0 1.5-1.5V7.621a1.5 1.5 0 0 0-.44-1.06l-4.12-4.122A1.5 1.5 0 0 0 11.38 2H4.5Zm10 14.5h-10v-13h5.879L14.5 7.621V16.5Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <span class="text-xs font-medium text-slate-500">Halaman</span>
+                                </div>
+                                <span class="text-sm text-slate-700 font-mono">320 hlm</span>
+                            </li>
+
+                            <li
+                                class="flex items-center justify-between p-3 px-4 rounded-xl border border-transparent hover:border-cyan-100 hover:bg-cyan-50/30 transition-all duration-300 group">
+                                <div class="flex items-center gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        class="w-4 h-4 text-slate-400 group-hover:text-cyan-500">
+                                        <path fill-rule="evenodd"
+                                            d="M5.75 2a.75.75 0 0 1 .75.75V4h7V2.75a.75.75 0 0 1 1.5 0V4h.25A2.75 2.75 0 0 1 18 6.75v8.5A2.75 2.75 0 0 1 15.25 18H4.75A2.75 2.75 0 0 1 2 15.25v-8.5A2.75 2.75 0 0 1 4.75 4H5V2.75A.75.75 0 0 1 5.75 2Zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <span class="text-xs font-medium text-slate-500">Rilis</span>
+                                </div>
+                                <span class="text-sm text-slate-700">2024</span>
+                            </li>
+
+                            <li
+                                class="flex items-center justify-between p-3 px-4 rounded-xl border border-transparent hover:border-cyan-100 hover:bg-cyan-50/30 transition-all duration-300 group">
+                                <div class="flex items-center gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        class="w-4 h-4 text-slate-400 group-hover:text-cyan-500">
+                                        <path fill-rule="evenodd"
+                                            d="M5.5 3A2.5 2.5 0 0 0 3 5.5v2.879a2.5 2.5 0 0 0 .732 1.767l6.5 6.5a2.5 2.5 0 0 0 3.536 0l2.878-2.878a2.5 2.5 0 0 0 0-3.536l-6.5-6.5A2.5 2.5 0 0 0 8.38 3H5.5ZM6 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <span class="text-xs font-medium text-slate-500">Kategori</span>
+                                </div>
+                                <span
+                                    class="bg-cyan-100/50 text-cyan-700 px-3 py-0.5 rounded-lg font-bold text-[10px] uppercase tracking-wider border border-cyan-100">Teknologi</span>
+                            </li>
+
+                            <li
+                                class="flex items-center justify-between p-3 px-4 rounded-xl bg-gradient-to-r from-slate-900 to-slate-800 shadow-lg shadow-slate-200 mt-2 transform hover:scale-[1.02] transition-transform">
+                                <div class="flex items-center gap-3 text-slate-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        class="w-4 h-4 text-cyan-400">
+                                        <path fill-rule="evenodd"
+                                            d="M1 4a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4Zm12 4a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM4 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm11-1a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"
+                                            clip-rule="evenodd" />
+                                        <path
+                                            d="M3 14a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H3Z" />
+                                    </svg>
+                                    <span class="text-xs font-bold uppercase tracking-widest opacity-80">Harga</span>
+                                </div>
+                                <span class="text-cyan-400 font-black text-base italic">Rp 145.000</span>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-20">
+            <div
+                class="group relative inline-flex items-center gap-4 bg-white/70 backdrop-blur-sm border border-cyan-100 p-1.5 pr-8 rounded-2xl shadow-xl shadow-cyan-50/50 mb-10 hover:shadow-cyan-100/60 hover:border-cyan-200 transition-all duration-500">
+
+                <div
+                    class="relative bg-gradient-to-br from-cyan-400 to-indigo-500 p-2.5 rounded-xl shadow-lg shadow-cyan-200 group-hover:rotate-12 transition-transform duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-5 h-5 text-white">
+                        <path fill-rule="evenodd"
+                            d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813a3.75 3.75 0 0 0 2.576-2.576l.813-2.846A.75.75 0 0 1 9 4.5ZM19.307 12.437a.5.5 0 0 1 .481.363l.271.948a1.25 1.25 0 0 0 .859.859l.948.271a.5.5 0 0 1 0 .962l-.948.271a1.25 1.25 0 0 0-.859.859l-.271.948a.5.5 0 0 1-.962 0l-.271-.948a1.25 1.25 0 0 0-.859-.859l-.948-.271a.5.5 0 0 1 0-.962l.948-.271a1.25 1.25 0 0 0 .859-.859l.271-.948a.5.5 0 0 1 .481-.363ZM16 4a.5.5 0 0 1 .481.363l.271.948c.118.414.445.741.859.859l.948.271a.5.5 0 0 1 0 .962l-.948.271a1.25 1.25 0 0 0-.859.859l-.271.948a.5.5 0 0 1-.962 0l-.271-.948a1.25 1.25 0 0 0-.859-.859l-.948-.271a.5.5 0 0 1 0-.962l.948-.271a1.25 1.25 0 0 0 .859-.859l.271-.948A.5.5 0 0 1 16 4Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+
+                <div class="flex flex-col">
+                    <span
+                        class="text-[9px] font-black text-cyan-600 uppercase tracking-[0.3em] leading-tight">Recommended</span>
+                    <h3 class="text-sm font-bold text-slate-800 tracking-tight">Buku yang mungkin anda suka</h3>
+                </div>
+
+                <span class="absolute right-4 top-1/2 -translate-y-1/2 flex h-2 w-2">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                </span>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative aspect-[3/4] bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 transition-all group-hover:-translate-y-2 group-hover:shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=300&q=80"
+                            alt="Book Cover" class="w-full h-full object-cover">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <p class="text-white text-xs font-bold">Lihat Detail</p>
+                        </div>
+                    </div>
+                    <h3 class="mt-3 font-bold text-slate-800 text-sm truncate px-2">The Art of Coding</h3>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative aspect-[3/4] bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 transition-all group-hover:-translate-y-2 group-hover:shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=300&q=80"
+                            alt="Book Cover" class="w-full h-full object-cover">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <p class="text-white text-xs font-bold">Lihat Detail</p>
+                        </div>
+                    </div>
+                    <h3 class="mt-3 font-bold text-slate-800 text-sm truncate px-2">System Architecture</h3>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative aspect-[3/4] bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 transition-all group-hover:-translate-y-2 group-hover:shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=300&q=80"
+                            alt="Book Cover" class="w-full h-full object-cover">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <p class="text-white text-xs font-bold">Lihat Detail</p>
+                        </div>
+                    </div>
+                    <h3 class="mt-3 font-bold text-slate-800 text-sm truncate px-2">Database Design</h3>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative aspect-[3/4] bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 transition-all group-hover:-translate-y-2 group-hover:shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1532012197367-2084ddb7376f?auto=format&fit=crop&w=300&q=80"
+                            alt="Book Cover" class="w-full h-full object-cover">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <p class="text-white text-xs font-bold">Lihat Detail</p>
+                        </div>
+                    </div>
+                    <h3 class="mt-3 font-bold text-slate-800 text-sm truncate px-2">Cyber Security 101</h3>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative aspect-[3/4] bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 transition-all group-hover:-translate-y-2 group-hover:shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=300&q=80"
+                            alt="Book Cover" class="w-full h-full object-cover">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            <p class="text-white text-xs font-bold">Lihat Detail</p>
+                        </div>
+                    </div>
+                    <h3 class="mt-3 font-bold text-slate-800 text-sm truncate px-2">UI/UX Principles</h3>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+    <div id="particles-js" class="fixed inset-0 -z-10 bg-gradient-to-b from-slate-900 to-black"></div>
+</body>
+
+</html>
